@@ -1,5 +1,447 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  background-image: url(/images/cover-image-dark.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 100%;
+
+  margin: 0;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+
+  padding: 10px;
+  height: 100vh;
+  min-height: 668px;
+  position: relative;
+  grid-template-columns: 100%;
+}
+
+.header__theme-menu-button {
+  color: var(--accent-color);
+  border: none;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+  text-transform: lowercase;
+  background-color: transparent;
+  min-height: 26px;
+  min-width: 70px;
+  line-height: 1;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--button-hover-border);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: var(--text-decoration-color);
+}
+
+.shadow-decor-href {
+  text-decoration: none;
+}
+.shadow-decor-href:focus {
+  outline: none;
+}
+.shadow-decor-href:focus-visible {
+  border-bottom: 1px solid var(--underline-color);
+
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+  inset-block-start: 11px;
+  inset-inline-end: 10px;
+  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--accent-color);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+  inset-block-end: 10px;
+  inset-inline-start: 10px;
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color);
+}
+
+.rec {
+  position: absolute;
+  inset-inline-end: 0px;
+  inset-block-start: 0px;
+}
+.rec::before {
+  content: "rec";
+  position: absolute;
+  text-transform: uppercase;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+  color: var(--accent-color);
+  inset-inline-end: 38px;
+  inset-block-start: 11px;
+}
+
+.rec::after {
+  content: "";
+  position: absolute;
+  background-color: var(--accent-color);
+  block-size: 9px;
+  inline-size: 9px;
+
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  inset-block-start: 21px;
+  inset-inline-end: 20px;
+}
+
+.header__theme-menu {
+  align-self: center;
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+
+  gap: 10px;
+}
+
+.header__title {
+  color: var(--header-title);
+  text-shadow: 4px 4px 0 var(--shadow-decor);
+  font-family: IBM Plex Mono, sans-serif;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 82.5%;
+  text-align: left;
+}
+
+.title-decor {
+  background-color: var(--title-decor-bg);
+  color: var(--title-decor-text);
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.header-text {
+  align-self: center;
+  justify-self: end;
+  width: clamp(355px, 49%, 491px);
+}
+
+.accent-color {
+  color: var(--accent-color);
+  font-family: IBM Plex Mono, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.text-color {
+  color: var(--text-color);
+  font-family: IBM Plex Mono, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  text-align: left;
+}
+
+.subtitle-decor {
+  background-color: var(--subtitle-decor);
+  color: var(--title-decor-text);
+  font-family: IBM Plex Mono, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  text-align: left;
+}
+
+.shadow-decor {
+  text-shadow: 1px 1px 0 var(--shadow-decor);
+}
+
+.main-section {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-top: 41px;
+  padding-bottom: 40px;
+}
+
+.title-decor-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer {
+  height: 100vh;
+  position: relative;
+  min-height: 668px;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (width>=768px) and (height>=1024px) {
+  .why-section,
+  .how-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+
+  .decorated-zone::before {
+    inset-block-start: 20px;
+    inset-inline-end: 20px;
+  }
+
+  .rec::before {
+    inset-inline-end: 48px;
+    inset-block-start: 18px;
+  }
+
+  .rec::after {
+    inset-block-start: 27px;
+    inset-inline-end: 29px;
+  }
+
+  .decorated-zone::after {
+    inset-block-end: 21px;
+    inset-inline-start: 20px;
+  }
+
+  .image-block-decor {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 20px;
+  }
+
+  .sunset {
+    display: block;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    object-fit: cover;
+  }
+  .ice-cream {
+    display: block;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    grid-column-start: 3;
+    object-fit: cover;
+  }
+
+  .books {
+    display: block;
+    object-fit: cover;
+  }
+
+  .tape {
+    display: block;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    object-fit: cover;
+  }
+
+  .street {
+    display: block;
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    object-fit: cover;
+  }
+
+  .header {
+    padding: 20px 20px 20px 0;
+  }
+
+  .main-section {
+    padding: 60px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  .accent-color {
+    display: grid;
+    grid-template-columns: 236px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .title-decor-wrapper-image {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (width>=1024px) and (height>=768px) {
+  .page {
+    width: 1024px;
+    margin: 0 auto;
+  }
+
+  .header {
+    padding: 20px 20px 10px 0;
+  }
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__theme-menu {
+    align-self: flex-start;
+    justify-self: center;
+  }
+
+  .decorated-zone::before {
+    inset-block-start: 19px;
+    inset-inline-end: 22px;
+  }
+  .decorated-zone::after {
+    inset-block-end: 17px;
+    inset-inline-start: 17px;
+  }
+
+  .rec::before {
+    inset-inline-end: 49px;
+    inset-block-start: 20px;
+  }
+
+  .rec::after {
+    inset-block-start: 28px;
+    inset-inline-end: 30px;
+  }
+
+  .why-section,
+  .how-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 12px;
+  }
+  .main-section {
+    padding: 60px 20px 60px;
+    gap: 80px;
+  }
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+  .shadow-decor-href {
+    text-decoration: none;
+  }
+  .shadow-decor-href:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--text-color);
+  }
+
+  .text-wrapper-desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .accent-color-desktop {
+    display: grid;
+    grid-template-columns: 315px;
+  }
+
+  .title-decor-wrapper-image {
+    gap: 20px;
+  }
+
+  .image-block-decor {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 20px;
+  }
+
+  .sunset {
+    display: block;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    object-fit: cover;
+  }
+  .ice-cream {
+    display: block;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    grid-column-start: 3;
+    object-fit: cover;
+  }
+
+  .books {
+    display: block;
+    object-fit: cover;
+  }
+
+  .tape {
+    display: block;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    object-fit: cover;
+  }
+
+  .street {
+    display: block;
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    object-fit: cover;
+  }
+}
+
+@media (hover: hover) {
+  .header__theme-menu-button:hover {
+    border: 1px solid var(--button-hover-border);
+  }
 }
