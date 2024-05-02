@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="icon" href="./images/favicon.ico" />
     <link rel="icon" href="./images/favicon.svg" />
+    <link rel="apple-touch-icon" href="./images/favicon.png">
     <title>Сложно сосредоточиться</title>
   </head>
   <body class="page">
@@ -21,14 +22,14 @@
       <nav class="header__theme-menu">
         <ul class="header__theme-menu-list">
           <li class="header__theme-menu-item">
-            <button
+            <button type="submit"
               class="header__theme-menu-button header__theme-menu-button_type_light"
             >
               День
             </button>
           </li>
           <li class="header__theme-menu-item">
-            <button
+            <button type="submit"
               class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
               disabled
             >
@@ -36,7 +37,7 @@
             </button>
           </li>
           <li class="header__theme-menu-item">
-            <button
+            <button type="submit"
               class="header__theme-menu-button header__theme-menu-button_type_dark"
             >
               Неон
@@ -45,13 +46,13 @@
         </ul>
       </nav>
 
-      <h1 class="header__title">no focus</h1>
-      <h3 class="title-decor header-text">
+      <h1 class="title">no focus</h1>
+      <h2 class="title-decor header-text">
         Что делать, когда не можешь делать ничего<br />
         Или почему нам так сложно сконцентрироваться, особенно когда очень надо
-      </h3>
+      </h2>
     </header>
-    <script src="./scripts/script.js"></script>
+    
     <main class="main-section">
       <section class="why-section">
         <h2 class="accent-color">Почему сосредоточиться так сложно</h2>
@@ -210,7 +211,7 @@
       </section>
       <section class="images-block">
         <div class="title-decor-wrapper title-decor-wrapper-image">
-          <h3 class="title-decor">А можно в картинках?</h3>
+          <h2 class="title-decor">А можно в картинках?</h2>
           <div class="image-block-decor">
             <img class="sunset" src="./images/sunset.png" alt="закат" />
             <img
@@ -226,7 +227,8 @@
       </section>
     </main>
     <footer class="footer">
-      <h2 class="decorated-zone header__title">focus</h2>
+      <h2 class="decorated-zone title">focus</h2>
     </footer>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
