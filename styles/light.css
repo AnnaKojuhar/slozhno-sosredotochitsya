@@ -24,7 +24,7 @@
   --text-decoration-color: rgba(53, 52, 48, 1);
   --shadow-decor:rgba(255, 141, 203, 1);
   --underline-color:rgba(0, 0, 40, 1);
-  --button-hover-border:rgba(0, 0, 40, 1);
+  --button-hover-border: rgba(50, 49, 45, 0.4);
 } 
 
 
@@ -54,6 +54,7 @@
   --text-decoration-color: rgba(53, 52, 48, 1);
   --shadow-decor:rgba(255, 141, 203, 1);
   --underline-color:rgba(0, 0, 40, 1);
+  --button-hover-border: rgba(50, 49, 45, 0.4);
   }
   .theme_light .rec{
     display: none;
